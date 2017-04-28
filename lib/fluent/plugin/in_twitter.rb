@@ -116,8 +116,8 @@ module Fluent::Plugin
         record['user_name'] = tweet.user.name
         record['user_screen_name'] = tweet.user.screen_name
         record['user_profile_image_url'] = tweet.user.profile_image_url.to_s
-        record['user_time_zone'] = tweet.user.time_zone
-        record['user_lang'] = tweet.user.lang
+        record['user_time_zone'] = tweet.user.time_zone.to_s
+        record['user_lang'] = tweet.user.lang.to_s
       end
       router.emit(@tag, Fluent::Engine.now, record)
     end
