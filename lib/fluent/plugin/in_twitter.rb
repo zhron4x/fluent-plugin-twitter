@@ -110,8 +110,8 @@ module Fluent::Plugin
       when :simple
         record = {}
         record['message'] = tweet.text.scrub('')
-        record['geo'] = tweet.geo
-        record['place'] = tweet.place
+        record['geo'] = tweet.geo.to_s
+        record['place'] = tweet.place.to_s
         record['created_at'] = tweet.created_at.to_s
         record['user_name'] = tweet.user.name
         record['user_screen_name'] = tweet.user.screen_name
